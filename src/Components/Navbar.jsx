@@ -9,10 +9,10 @@ export default function Navbar() {
           <Image src={Jokiin} alt="jokiin image" className={"w-32 m-0"} />
         </div>
         <ul className="flex flex-row gap-10 font-bold text-white">
+          <li>Layanan</li>
           <li>Daftar paket</li>
           <li>Syarat</li>
           <li>Testimoni</li>
-          <li>Layanan</li>
         </ul>
       </div>
       <div

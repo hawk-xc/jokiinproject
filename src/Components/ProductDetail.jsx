@@ -1,9 +1,11 @@
-const ProductDetail = ({ ref, children }) => {
+import { forwardRef } from "react";
+
+const ProductDetail = forwardRef((props, ref) => {
   return (
-    <div className="w-full" ref={ref}>
-      {children}
-    </div>
+    <section ref={ref} className="w-full">
+      {props.children}
+    </section>
   );
-};
+});
 
 export default ProductDetail;

@@ -16,19 +16,27 @@ export default function App() {
   const [currentRefIndex, setCurrentRefIndex] = useState(0);
 
   const scrollToNextRef = () => {
-    const refKeys = Object.keys(refLists);
-    const nextRefIndex = (currentRefIndex + 1) % refKeys.length; // Menemukan indeks referensi berikutnya (looping kembali ke awal setelah yang terakhir)
-    setCurrentRefIndex(nextRefIndex); // Update state dengan indeks referensi saat ini
-    reference(refLists[refKeys[nextRefIndex]]); // Panggil fungsi untuk scroll ke ref berikutnya
+    const nextRefIndex = (currentRefIndex + 1) % refLists.length;
+    setCurrentRefIndex(nextRefIndex);
+
+    refLists[nextRefIndex].ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const refLists = {
-    homeRef,
-    productRef,
-    // projectRef,
-    // skillsRef,
-    // contactmeRef,
+  const scroller = (ref) => {
+    ref?.current &&
+      window.scrollTo({ top: ref.current.offsetTop, behavior: "smooth" });
   };
+
+  const refLists = [
+    {
+      name: "home",
+      ref: homeRef,
+    },
+    {
+      name: "services",
+      ref: productRef,
+    },
+  ];
 
   useEffect(() => {
     AOS.init();
@@ -62,8 +70,8 @@ export default function App() {
       data-theme="light"
     >
       <DynamicPactiles />
-      <Navbar />
-      <HeroSection>
+      <Navbar scroller={scroller} refLists={refLists} />
+      <HeroSection homeRef={homeRef}>
         <LandingPage />
       </HeroSection>
       <ProductDetail ref={productRef}>

@@ -19,7 +19,7 @@ export default function App() {
       <div className="z-20 w-full overflow-scroll h-[56%] pb-5">
         <ul className="flex flex-row flex-wrap gap-10">
           {tag.map((item, index) => (
-            <li>
+            <li key={index}>
               <CardContent
                 image={microsoft}
                 title="microsoft"

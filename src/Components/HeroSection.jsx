@@ -1,9 +1,11 @@
-const HeroSection = ({ homeRef, children }) => {
+import { forwardRef } from "react";
+
+const HeroSection = forwardRef((props, ref) => {
   return (
-    <section ref={homeRef} className="w-full">
-      {children}
+    <section ref={ref} className="w-full">
+      {props.children}
     </section>
   );
-};
+});
 
 export default HeroSection;

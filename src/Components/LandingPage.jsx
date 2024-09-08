@@ -19,15 +19,17 @@ export default function LandingPage() {
           Butuh jasa mengerjakan project web apps, makalah, tugas networking,
           UML, database, dan lainnya? Serahkan pada kami!
         </p>
-        <p className="w-5/12 mt-10">
+        <div className="w-5/12 mt-10">
           <ul className="flex flex-row flex-wrap w-full gap-3">
             {TagLists.map((item, index) => (
               <li key={`item-${index}`}>
-                <div class="badge bg-white shadow-lg p-4 z-50">#{item}</div>
+                <span className="z-50 p-4 bg-white shadow-lg badge">
+                  #{item}
+                </span>
               </li>
             ))}
           </ul>
-        </p>
+        </div>
       </div>
       <div className="absolute bottom-0 flex flex-col items-center justify-center align-middle">
         <Image

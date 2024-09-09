@@ -2,7 +2,7 @@ import Image from "./../Particles/Image";
 
 const CardContent = ({ image, title, detail, status, tag }) => {
   return (
-    <div className="relative z-0 overflow-hidden shadow-xl card bg-base-100 w-72 group">
+    <div className="relative z-0 overflow-hidden shadow-xl card bg-base-100 md:w-72 group">
       <figure>
         <Image src={image} alt="microsoft image" className="w-full" />
       </figure>

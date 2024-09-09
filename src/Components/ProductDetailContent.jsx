@@ -12,12 +12,27 @@ export default function App() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-8 align-middle light-background px-36">
+    <div className="flex flex-col items-center justify-center h-screen align-middle md:gap-8 light-background md:px-36 max-sm:px-10">
       <div className="flex flex-col w-full">
-        <h1 className="text-4xl font-extrabold">Kamu butuh jasa apa?</h1>
+        <h1 className="font-extrabold md:text-4xl max-sm:text-2xl">
+          Kamu butuh jasa apa?
+        </h1>
       </div>
       <div className="z-20 w-full overflow-scroll h-[56%] pb-5">
-        <ul className="flex flex-row flex-wrap gap-10">
+        <ul className="flex flex-col gap-5 md:hidden">
+          {tag.map((item, index) => (
+            <li key={index}>
+              <div className="p-2 border border-slate-100">
+                <h2>Cloud Computing</h2>
+                <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  id a dolor quo veritatis.
+                </span>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <ul className="flex flex-row flex-wrap gap-10 max-sm:hidden">
           {tag.map((item, index) => (
             <li key={index}>
               <CardContent

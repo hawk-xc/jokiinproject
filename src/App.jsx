@@ -9,6 +9,7 @@ import LandingPage from "./Components/LandingPage";
 import ScrollButton from "./Particles/ScrollButton";
 import ProductDetail from "./Components/ProductDetail";
 import ProductDetailContent from "./Components/ProductDetailContent";
+import Drawer from "./Components/Drawer";
 
 export default function App() {
   const homeRef = useRef(null);
@@ -71,6 +72,11 @@ export default function App() {
     >
       <DynamicPactiles />
       <Navbar scroller={scroller} refLists={refLists} />
+      <Drawer
+        refLists={refLists}
+        currentRefIndex={currentRefIndex}
+        scroller={scroller}
+      />
       <HeroSection homeRef={homeRef}>
         <LandingPage />
       </HeroSection>
